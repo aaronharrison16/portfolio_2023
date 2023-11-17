@@ -3,25 +3,137 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --bg: #000000;
+  --text: #151515;
+  --yellow: #EDB74D;
+  --red: #EB6666;
+  --green: #6FB18A;
+
+  --blob1: clamp(8rem, 25vw, 15rem);
+  --blob2: clamp(9rem, 28vw, 17rem);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    
+  background-color: var(--bg);
+}
+
+/* Blobs */
+.blob-outer-container {
+  height: 100dvh;
+  width: 100dvw;
+  display: flex;
+  overflow: hidden;
+  position: fixed;
+}
+
+
+.blob-inner-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+}
+
+
+.blob {
+  border-radius: 100px;
+  filter: blur(clamp(40px, 2.8vw, 60px));
+  position: absolute;
+}
+
+.yellow {
+  background-color: var(--yellow);
+  height: var(--blob1);
+  width: var(--blob1);
+  
+  animation: yellow 8s infinite ease;
+}
+
+.green {
+  background-color: var(--green);
+  height: var(--blob1);
+  width: var(--blob2);
+  
+  animation: green 8s infinite ease;
+}
+
+.red {
+  background-color: var(--red);
+  height: var(--blob2);
+  width: var(--blob1);
+  
+  animation: red 8s infinite linear;
+}
+
+.glass {
+  background-color: rgba(0 0 0 / 40%);
+  box-shadow: -1px 3px 8px -1px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.section {
+  min-height: 100dvh;
+}
+
+.center-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #8f54a0 var(--bg);
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: var(--bg);
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: red;
+    border-radius: 20px;
+    border: 1px solid var(--bg);
+  }
+
+@keyframes yellow {
+  0% {transform: scale(1) translate(clamp(30px, 3vw, 150px), clamp(30px, 3vw, 150px));}
+  30% {transform: scale(1.2) translate(clamp(30px, 3vw, 150px), clamp(30px, 3vw, 150px));}
+  60% {transform: scale(1.3) translate(clamp(30px, 3vw, 150px), clamp(30px, 3vw, 150px));}
+  100% {transform: scale(1) translate(clamp(30px, 3vw, 150px), clamp(30px, 3vw, 150px));}
+}
+
+@keyframes green {
+  0% {transform: scale(1.2) translate(-3vw, -7vh);}
+  30% {transform: scale(1) translate(-3vw, -7vh);}
+  60% {transform: scale(1) translate(-3vw, -7vh);}
+  100% {transform: scale(1.2) translate(-3vw, -7vh);}
+}
+
+@keyframes red {
+  0% {transform: scale(1) translate(-7vw, 7vh);}
+  30% {transform: scale(1.2) translate(-7vw, 7vh);}
+  60% {transform: scale(1) translate(-7vw, 7vh);}
+  100% {transform: scale(1) translate(-7vw, 7vh);}
 }
