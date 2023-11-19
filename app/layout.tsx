@@ -1,7 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import { Blobs, Nav } from './LayoutComponents'
-import { Hero } from './Sections'
+import { About, Hero, Projects, Skills } from './Sections'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,14 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Nav />
-      
-      <Blobs />
-      <Hero />
-      <Hero />
-      <Hero />
-      <Hero />
-      
+      <body>
+        <Blobs />
+        <Nav />
+        {children}
+      </body>
     </html>
   )
 }
