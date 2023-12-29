@@ -1,0 +1,14 @@
+.navButton {
+  height: 100%;
+  color: white;
+  padding: 0 1em;
+  transition: all 0.6s var(--easing);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.69;
+}
+
+.navButton:hover {
+  opacity: 1;
+}

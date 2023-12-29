@@ -1,0 +1,62 @@
+.mistContainer {
+  /* --blob1: clamp(8rem, 25vw, 15rem); */
+  --blob1: 60dvw;
+  --blob2: 30dvw;
+  height: 100dvh;
+  width: 100dvw;
+  display: flex;
+  overflow: hidden;
+  position: fixed;
+}
+
+.mistTop {
+  border-radius: 100%;
+  filter: blur(8em);
+  /* filter: blur(clamp(40px, 2.8vw, 60px)); */
+  position: absolute;
+  height: var(--blob2);
+  width: var(--blob1);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  transition: all 0.6s cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+.mistBottom {
+  border-radius: 100%;
+  filter: blur(8em);
+  /* filter: blur(clamp(40px, 2.8vw, 60px)); */
+  position: absolute;
+  height: 10dvw;
+  width: var(--blob1);
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 75%);
+  transition: all 0.6s cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+.yellowMist {
+  background-color: var(--yellow);
+}
+
+.greenMist {
+  background-color: var(--green);
+}
+
+.redMist {
+  background-color: var(--red);
+}
+
+.mistBlue {
+  background: linear-gradient(circle at 10% 20%, rgb(164, 38, 199) 0.1%, rgb(65, 220, 255) 90.1%);
+}
+
+.mistPink {
+  background: linear-gradient(609.6px at 21.5% 78.8%, rgb(37, 99, 219) 0%, rgb(233, 45, 181) 89.9%);
+}
+
+.mistPurple {
+  background: linear-gradient(109.6deg, rgb(157, 75, 199) 11.2%, rgb(119, 81, 204) 83.1%);
+}

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 
 type viewType = '#hero' | '#about' | '#skills' | '#projects'
 
-export default function Blobs() {
+export default function Mist() {
   const [activeView, setActiveView] = useState<viewType>('#hero')
   const html = document.documentElement;
 
@@ -54,13 +54,24 @@ export default function Blobs() {
     );
   }
 
+  const backgroundClass = (): string => {
+    var backgroundClass = styles.yellowMist
+    if (isActiveView('#about'))
+    {
+      backgroundClass = styles.redMist
+    }
+    else if (isActiveView('#skills'))
+    {
+      backgroundClass = styles.greenMist
+    }
+
+    return backgroundClass
+  }
+
   return (
-    <div className={styles.blobOuterContainer}>
-      <div className={styles.blobInnerContainer}>
-        <div className={`${styles.greenBlob} ${isActiveView('#about') && styles.greenBlobMoved}`} />
-        <div className={`${styles.yellowBlob} ${isActiveView('#skills') && styles.yellowBlobMoved}`} />
-        <div className={`${styles.redBlob} ${isActiveView('#projects') && styles.redBlobMoved}`} />
-      </div>
+    <div className={styles.mistContainer}>
+      <div className={`${styles.mistTop} ${backgroundClass()}`} />
+      <div className={`${styles.mistBottom} ${backgroundClass()}`} />
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import { About, Hero, Projects, Skills } from "./Sections";
+import { About, Experience, Hero, Projects, Skills } from "./Sections";
 
 export default function Page() {
   return (
@@ -6,6 +6,7 @@ export default function Page() {
       <Hero />
       <About />
       <Skills />
+      <Experience />
       <Projects />
     </main>
   )
