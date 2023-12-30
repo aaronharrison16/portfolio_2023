@@ -3,6 +3,10 @@
   margin-inline-start: 1rem;
 }
 
+.experienceListItem > time {
+  opacity: 0.6;
+}
+
 .experienceListItem > div {
   background-color: var(--accent);
   border-radius: 99999px;

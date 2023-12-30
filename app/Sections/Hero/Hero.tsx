@@ -2,7 +2,7 @@ import { Button } from "../../Components"
 
 const Hero = () => {
   return (
-    <section id="hero" className="flex flex-1 items-center justify-center">
+    <section id="hero" className="flex flex-1 items-center justify-center px-4">
       
       <div className="text-center">
         <h1>Hi, I&apos;m Aaron.</h1>

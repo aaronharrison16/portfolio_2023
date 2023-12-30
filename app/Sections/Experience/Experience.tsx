@@ -34,10 +34,9 @@ const items: Array<ExperienceItemProps> = [
 export default function Experience()
 {
   return (
-    <section id="experience" className="mx-auto max-w-7xl sm:px-16 lg:px-26 flex items-center">      
-      <div className="mx-auto max-w-md text-left lg:mx-0 lg:flex-auto px-6">
+    <section id="experience" className="max-w-7xl px-8 sm:px-16 mx-auto flex justify-center flex-col	">      
         <h2>Experience</h2>
-        <ol className="mt-6 relative border-s" style={{borderColor: 'var(--accent)'}}>
+        <ol className="relative border-s" style={{borderColor: 'var(--accent)'}}>
           {items.map((item, i) => (
             <ExperienceItem
               jobTitle={item.jobTitle}
@@ -49,7 +48,6 @@ export default function Experience()
             />
           ))}  
       </ol>
-      </div>
     </section>
   )
 }

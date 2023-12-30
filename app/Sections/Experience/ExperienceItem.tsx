@@ -1,3 +1,4 @@
+import { Chip } from "@/app/Components";
 import { ExperienceItemProps } from "./Experience";
 import styles from './styles.module.css'
 
@@ -5,9 +6,16 @@ export default function ExperienceItem({company, jobTitle, duration, skills, des
   return (
     <li className={styles.experienceListItem}>
       <div/>
-      <time className="mb-1 text-sm font-normal text-gray-400 dark:text-gray-500">{duration}</time>
+      <time className="mb-1 text-sm font-normal">{duration}</time>
       <h3 className="text-lg font-semibold">{jobTitle}</h3>
-      <p className="mb-4 text-base font-normal text-gray-500 dark:text-gray-400">{company}</p>
+      <p className="text-base font-normal">{company}</p>
+      <span className="flex gap-2 py-2">
+        {skills?.map((skill, i) => (
+          <Chip key={i}>
+            {skill}
+          </Chip>
+        ))}
+      </span>
     </li>
   )
 }

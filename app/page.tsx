@@ -5,9 +5,9 @@ export default function Page() {
     <main>
       <Hero />
       <About />
-      <Skills />
+      {/* <Skills /> */}
       <Experience />
-      <Projects />
+      {/* <Projects /> */}
     </main>
   )
 }

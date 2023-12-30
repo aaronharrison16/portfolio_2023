@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 :root {
+  --accent-transparent: rgba(20 20 20 / 40%);
   --accent: rgba(20 20 20 );
   --bg: #000000;
   --text: #ffffff;
@@ -40,6 +41,7 @@ h2 {
   line-height: 1;
   font-weight: 600;
   opacity: 0.85;
+  margin-bottom: 1.5rem;
 }
 
 h3 {

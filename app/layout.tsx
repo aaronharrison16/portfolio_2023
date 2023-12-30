@@ -10,8 +10,8 @@ export default function RootLayout({children}: {children: React.ReactNode})
 {
   return (
     <html lang="en">
-      <body>
-        {/* <Blobs /> */}
+      <body suppressHydrationWarning={true}>
+        <Blobs />
         {children}
         <Nav />
       </body>
