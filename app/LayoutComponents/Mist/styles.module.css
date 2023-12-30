@@ -1,9 +1,9 @@
 .mistContainer {
   /* --blob1: clamp(8rem, 25vw, 15rem); */
-  --blob1: 60dvw;
-  --blob2: 30dvw;
-  height: 100dvh;
-  width: 100dvw;
+  --blob1: 60vw;
+  --blob2: 30vw;
+  height: 100svh;
+  width: 100vw;
   display: flex;
   overflow: hidden;
   position: fixed;

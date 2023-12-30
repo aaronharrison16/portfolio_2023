@@ -27,7 +27,7 @@ body {
 section {
   scroll-snap-stop: always;
   scroll-snap-align: start;
-  height: 100dvh;
+  height: 100svh;
 }
 
 h1 {
