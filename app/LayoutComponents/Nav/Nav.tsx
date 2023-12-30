@@ -1,11 +1,35 @@
+'use client'
+
+import { useSectionChanged } from "@/app/utils";
 import NavButton from "./NavButton"
 
 const Nav = () => {
+  const activeView = useSectionChanged();
+
+  const isActiveView = (sectionId: string): boolean => {
+    console.log(sectionId == activeView)
+    return (activeView === sectionId)
+  }
+
+  const navigate = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+
+    console.log(section)
+
+    if (section) {
+      const sectionTop = section.offsetTop;
+      window.scrollTo({
+        top: sectionTop,
+        behavior: "smooth"
+      })
+    }
+  }
+
   return (
     <nav className="glass nav">
       <div className="mx-auto max-w-7xl px-2 sm:px-6">
         <div className="relative flex h-16 items-center justify-between">
-          <div className="inset-y-0 left-0 flex items-center sm:hidden">
+          {/* <div className="inset-y-0 left-0 flex items-center sm:hidden">
             <button type="button" className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
               <span className="absolute -inset-0.5"></span>
               <span className="sr-only">Open main menu</span>
@@ -18,18 +42,23 @@ const Nav = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-          </div>
+          </div> */}
 
           <div className="flex flex-1 items-center justify-start sm:justify-between h-full">
-            <div className="text-white">
-              aaronharrison.dev
-            </div>
+            <NavButton sectionId="hero" onClick={navigate} title="aaronharrison.dev" />
+
             <div className="hidden sm:ml-6 sm:block h-full">
               <div className="flex space-x-4 h-full">
-                <NavButton title="about" />
-                <NavButton title="expertise" />
-                <NavButton title="experience" />
-                <NavButton title="projects" />
+                <NavButton
+                  sectionId="about"
+                  onClick={navigate}
+                  active={isActiveView('about')}
+                  title="about"
+                />
+
+                {/* <NavButton sectionId="skills" onClick={navigate} title="expertise" /> */}
+                <NavButton sectionId="experience" onClick={navigate} title="experience" />
+                {/* <NavButton sectionId="projects" onClick={navigate} title="projects" /> */}
               </div>
             </div>
           </div>

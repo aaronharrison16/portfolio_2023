@@ -1,16 +1,19 @@
 import styles from './styles.module.css'
 
 interface NavButtonProps {
-  title: string
+  title: string,
+  sectionId: string,
+  onClick: (sectionId: string) => void,
+  active?: boolean
 }
 
-const NavButton = ({title}: NavButtonProps) => {
-  //not sure if this should be a link or button or what. Problem for a different day
+export default function NavButton({title, onClick, sectionId, active}: NavButtonProps) {
   return (
-    <div className={styles.navButton}>
+    <button
+      onClick={() => onClick(sectionId)}
+      className={`${styles.navButton} ${active ? styles.navButtonActive : ''}}`}
+    >
       {title}
-    </div>
+    </button>
   )
 }
-
-export default NavButton

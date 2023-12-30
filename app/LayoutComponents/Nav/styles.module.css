@@ -12,3 +12,8 @@
 .navButton:hover {
   opacity: 1;
 }
+
+.navButtonActive {
+  background-color: green;
+  opacity: 1;
+}
