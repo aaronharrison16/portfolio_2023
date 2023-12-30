@@ -4,15 +4,21 @@ export type viewType = 'hero' | 'about' | 'skills' | 'projects'
 
 export default function useSectionChanged() {
   const [activeView, setActiveView] = useState<viewType>('hero')
-  const html = document.documentElement;
 
   useEffect(() => {
     const isInViewport = (rect:DOMRect | undefined): boolean => {
-      if (!rect)
+      let html = null;
+
+      if (document)
+      {
+        html = document.documentElement;
+      }
+
+      if (!rect || !html)
       {
         return false;
       }
-    
+
       return (
         rect.top >= 0 &&
         rect.left >= 0 &&
@@ -44,7 +50,7 @@ export default function useSectionChanged() {
         setActiveView('projects')
       }
     })
-  }, [html])
+  }, [])
 
   return activeView
 }
