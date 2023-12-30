@@ -3,12 +3,14 @@
 @tailwind utilities;
 
 :root {
+  --accent: rgba(20 20 20 );
   --bg: #000000;
-  --text: #151515;
+  --text: #ffffff;
   --yellow: #EDB74D;
   --red: #EB6666;
   --green: #6FB18A;
   --easing: cubic-bezier(0.16, 1, 0.3, 1);
+  --border-radius: 14px;
 }
 
 html {
@@ -17,6 +19,8 @@ html {
 
 body { 
   background-color: var(--bg);
+  font-family: system-ui, sans-serif;
+  color: var(--text);
 }
 
 section {
@@ -25,9 +29,52 @@ section {
   height: 100dvh;
 }
 
+h1 {
+  font-size: 8rem;
+  line-height: 1;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 3rem;
+  line-height: 1;
+  font-weight: 600;
+  opacity: 0.85;
+}
+
+h3 {
+  font-size: 2.25rem;
+  opacity: 0.85;
+  line-height: 2.5rem;
+}
+
+p {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  opacity: 0.75;
+}
+
+@media screen and (max-width: 640px) {
+  h1 {
+    font-size: 3.75rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
 * {
   scrollbar-width: auto;
-  scrollbar-color: red var(--bg);
+  scrollbar-color: var(--accent) var(--bg);
 }
 
 /* Chrome, Edge, and Safari */
@@ -40,7 +87,7 @@ section {
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: red;
+  background-color: var(--accent);
   border-radius: 20px;
   border: 1px solid var(--bg);
 }

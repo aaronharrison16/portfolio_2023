@@ -1,8 +1,5 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
-import { Blobs, Mist, Nav } from './LayoutComponents'
-
-const inter = Inter({ subsets: ['latin'] })
+import { Blobs,  Nav } from './LayoutComponents'
 
 export const metadata = {
   title: 'aaronharrison.dev',
@@ -14,10 +11,9 @@ export default function RootLayout({children}: {children: React.ReactNode})
   return (
     <html lang="en">
       <body>
-        <Mist />
         {/* <Blobs /> */}
-        <Nav />
         {children}
+        <Nav />
       </body>
     </html>
   )

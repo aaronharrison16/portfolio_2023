@@ -1,0 +1,14 @@
+.button {
+  background-color: rgba(20 20 20 / 40%);
+  border-radius: var(--border-radius);
+  box-shadow: -1px 3px 8px -1px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: var(--text);
+  padding: 1em 2em;
+  transition: all 0.4s var(--easing);
+}
+
+.button:hover {
+  filter: brightness(125%);
+}
