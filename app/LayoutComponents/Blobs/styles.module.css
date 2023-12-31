@@ -2,7 +2,7 @@
   --blob1: clamp(8rem, 25vw, 15rem);
   --blob2: clamp(9rem, 28vw, 17rem);
 
-  height: 100svh;
+  height: 100lvh;
   width: 100vw;
   display: flex;
   overflow: hidden;
