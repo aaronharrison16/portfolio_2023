@@ -1,0 +1,93 @@
+.checkbox {
+  display: none;
+  overflow: visible;
+}
+
+.checkboxSvg {
+  cursor: pointer;
+  overflow: visible;
+  fill: var(--text);
+  opacity: 0.69;
+}
+
+.line1 {
+  animation: animateLine1Out 0.47s cubic-bezier(0.64, 0, 0.78, 0) forwards;
+  
+}
+
+.line2 {
+  transform-origin: center;
+  animation: animateLine2Out 0.2s linear forwards;
+}
+
+.line3 {
+  transform-origin: center;
+  animation: animateLine3Out 0.2s linear forwards;
+}
+
+.line4 {
+  animation: animateLine4Out 0.47s cubic-bezier(0.64, 0, 0.78, 0) forwards;
+}
+
+.checkbox:checked + label svg {
+  .line1 {
+    animation: animateLine1 0.3s cubic-bezier(0.64, 0, 0.78, 0) forwards;
+  }
+  .line2 {
+    animation: animateLine2 0.2s linear forwards 0.27s;
+  }
+  .line3 {
+    animation: animateLine3 0.2s linear forwards 0.27s;
+  }
+  .line4 {
+    animation: animateLine4 0.3s cubic-bezier(0.64, 0, 0.78, 0) forwards;
+  }
+}
+
+@keyframes animateLine1{
+  0%{transform:translateY(0em);}
+  50%{transform:translateY(-0.3em); opacity: 1}
+  100%{transform:translateY(2.5em); opacity: 0}
+}
+
+@keyframes animateLine2{
+  0%{transform: rotate(0deg);}
+  50%{transform: rotate(50deg) scale(1.13, 1);}
+  100%{transform: rotate(45deg) scale(1.11, 1);}
+}
+
+@keyframes animateLine3{
+  0%{transform: rotate(0deg);}
+  50%{transform: rotate(-50deg) scale(1.13, 1);}
+  100%{transform: rotate(-45deg) scale(1.11, 1);}
+}
+
+@keyframes animateLine4{
+  0%{transform:translateY(0em);}
+  50%{transform:translateY(0.3em); opacity: 1}
+  100%{transform:translateY(-2.5em); opacity: 0}
+}
+
+@keyframes animateLine1Out{
+  0%{transform:translateY(2.5em); opacity: 0}
+  50%{transform:translateY(-0.3em); opacity: 1}
+  100%{transform:translateY(0em);}
+}
+
+@keyframes animateLine2Out{
+  0%{transform: rotate(45deg) scale(1.11, 1);}
+  50%{transform: rotate(50deg) scale(1.13, 1);}
+  100%{transform: rotate(0deg);}
+}
+
+@keyframes animateLine3Out{
+  0%{transform: rotate(-45deg) scale(1.11, 1);}
+  50%{transform: rotate(-50deg) scale(1.13, 1);}
+  100%{transform: rotate(0deg);}
+}
+
+@keyframes animateLine4Out{
+  0%{transform:translateY(-2.5em); opacity: 0}
+  50%{transform:translateY(0.3em); opacity: 1}
+  100%{transform:translateY(0em);}
+}
