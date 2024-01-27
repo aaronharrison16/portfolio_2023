@@ -4,7 +4,16 @@ export default function About() {
       <div className="mx-auto max-w-md lg:mx-0 ">
         <h2>About Me</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          I am Aaron Harrison, a full-stack developer based in Lehi, Utah. I am passionate about delivering high-quality, pixel-perfect, user experiences.
+        </p>
+        <br />
+        <p>
+          You can generally find me working on the front end. I have strong experience in Vue.js, Next.js, React Native, and even niches like Blazor.
+          While the front end is my happy place, I can hold my own through the full stack. I have worked in Rails, Python, and most recently dotnet.
+        </p>
+        <br />
+        <p>
+          When I am not writing code, you can catch me with my family, in the mountains, on the golf course, or on the river (failing at) fly fishing.
         </p>
       </div>
     </section>

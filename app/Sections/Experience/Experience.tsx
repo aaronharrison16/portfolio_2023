@@ -13,7 +13,7 @@ const items: Array<ExperienceItemProps> = [
     company: 'ThetaCore',
     duration: 'March 2021 - Present',
     jobTitle: 'Software Engineer',
-    skills: ['Blazor', 'dotnet', 'Vue', 'Python'],
+    skills: ['Blazor', 'dotnet', 'Vue', 'Python', 'Maui'],
     description: 'something here'
   },
   {
@@ -27,6 +27,13 @@ const items: Array<ExperienceItemProps> = [
     company: 'Boostability',
     duration: 'April 2019 - November 2019',
     jobTitle: 'Quality Assurance',
+    description: 'something here'
+  },
+  {
+    company: 'Utah Water Rights Exchange',
+    duration: 'May 2018 - April 2019',
+    jobTitle: 'FullStack Software Developer',
+    skills: ['Ruby', 'Ruby on Rails', 'PostgreSQL', 'JQuery', 'Bootstrap' ],
     description: 'something here'
   },
 ]
