@@ -2,12 +2,13 @@ import styles from './Button.module.css'
 
 interface ButtonProps {
   children: string,
+  OnClick: () => void
 }
 
-export default function Button({children}: ButtonProps) 
+export default function Button({children, OnClick}: ButtonProps) 
 {
   return (
-    <button className={styles.button}>
+    <button onClick={OnClick} className={styles.button}>
       {children}
     </button>
   )

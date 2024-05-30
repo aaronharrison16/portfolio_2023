@@ -1,6 +1,6 @@
 .navButton {
   height: 100%;
-  color: white;
+  color: var(--text);
   padding: 0 1em;
   transition: all 0.6s var(--easing);
   display: flex;
@@ -9,11 +9,6 @@
   opacity: 0.69;
 }
 
-.navButton:hover {
-  opacity: 1;
-}
-
-.navButtonActive {
-  background-color: green;
+.navButton:hover, .active {
   opacity: 1;
 }

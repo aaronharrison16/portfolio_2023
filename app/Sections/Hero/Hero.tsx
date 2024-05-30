@@ -1,3 +1,6 @@
+'use client'
+
+import { Navigate } from "@/app/utils"
 import { Button } from "../../Components"
 
 const Hero = () => {
@@ -8,7 +11,7 @@ const Hero = () => {
         <h1>Hi, I&apos;m Aaron.</h1>
         <h3 className="mt-6">I&apos;m a full stack developer.</h3>
         <div className="mt-10 flex items-center justify-center">
-          <Button>
+          <Button OnClick={() => Navigate('about')} >
             About Me
           </Button>
         </div>

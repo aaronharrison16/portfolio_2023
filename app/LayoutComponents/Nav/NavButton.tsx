@@ -1,6 +1,6 @@
 import styles from './styles.module.css'
 
-interface NavButtonProps {
+export interface NavButtonProps {
   title: string,
   sectionId: string,
   onClick: (sectionId: string) => void,
@@ -11,9 +11,12 @@ export default function NavButton({title, onClick, sectionId, active}: NavButton
   return (
     <button
       onClick={() => onClick(sectionId)}
-      className={`${styles.navButton} ${active ? styles.navButtonActive : ''}}`}
+      className={`${styles.navButton} ${active && styles.active}`}
     >
-      {title}
+      <p>
+
+        {title}
+      </p>
     </button>
   )
 }

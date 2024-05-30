@@ -1,31 +1,38 @@
 'use client'
 
-import { useSectionChanged } from "@/app/utils";
+import { useSectionChanged, Navigate } from "@/app/utils";
 import NavButton from "./NavButton"
 import { Hamburger } from "@/app/Components";
 import { useState } from "react";
 
+interface navItem {
+  title: string,
+  id: string
+}
+
+const navButtons: Array<navItem> = [
+  {
+    title: 'home',
+    id: 'hero',
+  },
+  {
+    title: 'about',
+    id: 'about',
+  },
+  {
+    title: 'experience',
+    id: 'experience',
+  },
+]
+
 const Nav = () => {
   const [checked, onCheckedChanged] = useState<boolean>(false);
   const activeView = useSectionChanged();
+  const isActiveView = (sectionId: string): boolean => (activeView === sectionId)
 
-  const isActiveView = (sectionId: string): boolean => {
-    console.log(sectionId == activeView)
-    return (activeView === sectionId)
-  }
-
-  const navigate = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-
-    console.log(section)
-
-    if (section) {
-      const sectionTop = section.offsetTop;
-      window.scrollTo({
-        top: sectionTop,
-        behavior: "smooth"
-      })
-    }
+  const NavigateFromDrawer = (sectionId: string) => {
+    Navigate(sectionId);
+    onCheckedChanged(false);
   }
 
   return (
@@ -40,35 +47,42 @@ const Nav = () => {
           </div>
 
           <div className="flex flex-1 items-center justify-start sm:justify-between h-full">
-            <NavButton sectionId="hero" onClick={navigate} title="aaronharrison.dev" />
+            <NavButton
+              sectionId="hero"
+              onClick={Navigate}
+              title="aaronharrison.dev"
+              active={isActiveView('hero')}
+            />
 
             <div className="hidden sm:ml-6 sm:block h-full">
               <div className="flex space-x-4 h-full">
-                <NavButton
-                  sectionId="about"
-                  onClick={navigate}
-                  active={isActiveView('about')}
-                  title="about"
-                />
-
-                {/* <NavButton sectionId="skills" onClick={navigate} title="expertise" /> */}
-                <NavButton sectionId="experience" onClick={navigate} title="experience" />
-                {/* <NavButton sectionId="projects" onClick={navigate} title="projects" /> */}
+                {navButtons.map(n => (
+                  <NavButton
+                    key={n.id}
+                    sectionId={n.id}
+                    onClick={Navigate}
+                    active={isActiveView(n.id)}
+                    title={n.title}
+                  />
+                ))}
               </div>
             </div>
           </div>
-          
-          
         </div>
       </div>
 
       {checked && (
         <div className="sm:hidden" id="mobile-menu">
           <div className="space-y-1 px-2 pb-3 pt-2">
-            <a href="#" className="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Dashboard</a>
-            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Team</a>
-            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
-            <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
+            {navButtons.map(n => (
+              <NavButton
+                key={n.id}
+                sectionId={n.id}
+                onClick={NavigateFromDrawer}
+                active={isActiveView(n.id)}
+                title={n.title}
+              />
+            ))}
           </div>
         </div>
       )}
