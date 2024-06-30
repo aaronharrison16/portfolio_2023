@@ -1,7 +1,7 @@
 export default function About() {
   return (
-    <section id="about" className="mx-auto max-w-7xl px-8 sm:px-16 flex items-center">      
-      <div className="mx-auto max-w-md lg:mx-0 ">
+    <section id="about" className="mx-auto max-w-7xl flex items-center">      
+      <div className="max-w-md px-4 md:px-10">
         <h2>About Me</h2>
         <p>
           I am Aaron Harrison, a full-stack developer based in Lehi, Utah. I am passionate about delivering high-quality, pixel-perfect, user experiences.
