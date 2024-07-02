@@ -1,0 +1,8 @@
+.contactLink {
+  opacity: 0.69;
+  transition: all 0.6s var(--easing);
+}
+
+.contactLink:hover, .active {
+  opacity: 1;
+}

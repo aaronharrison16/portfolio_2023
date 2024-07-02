@@ -4,6 +4,7 @@ import { useSectionChanged, Navigate } from "@/app/utils";
 import NavButton from "./NavButton"
 import { Hamburger } from "@/app/Components";
 import { useState } from "react";
+import ContactOptions from "@/app/Components/ContactOptions";
 
 interface navItem {
   title: string,
@@ -83,6 +84,10 @@ const Nav = () => {
                 title={n.title}
               />
             ))}
+
+            <div className="p-4">
+              <ContactOptions />
+            </div>
           </div>
         </div>
       )}

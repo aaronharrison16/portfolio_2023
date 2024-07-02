@@ -1,3 +1,4 @@
+import ContactOptions from './Components/ContactOptions'
 import './globals.css'
 import { Blobs,  Nav } from './LayoutComponents'
 
@@ -14,6 +15,10 @@ export default function RootLayout({children}: {children: React.ReactNode})
         <Blobs />
         {children}
         <Nav />
+
+        <div className='hidden md:block' style={{position: 'fixed', bottom: '32px', right: '32px', width: '32px'}}>
+          <ContactOptions />
+        </div>
       </body>
     </html>
   )
