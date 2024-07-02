@@ -32,7 +32,7 @@ const items: Array<ExperienceItemProps> = [
   {
     company: 'Utah Water Rights Exchange',
     duration: 'May 2018 - April 2019',
-    jobTitle: 'FullStack Software Developer',
+    jobTitle: 'Full Stack Software Developer',
     skills: ['Ruby', 'Ruby on Rails', 'PostgreSQL', 'JQuery', 'Bootstrap' ],
     description: 'something here'
   },
@@ -41,9 +41,11 @@ const items: Array<ExperienceItemProps> = [
 export default function Experience()
 {
   return (
-    <section id="experience" className="max-w-7xl px-8 sm:px-16 mx-auto flex justify-center flex-col	">      
+    <section id="experience" className="max-w-7xl mx-auto flex items-center">
+      <div className="max-w-md px-4 md:px-10 flex flex-col pt-20 pb-10">
         <h2>Experience</h2>
-        <ol className="relative border-s" style={{borderColor: 'var(--accent)'}}>
+
+        <ol className="relative ml-1 border-s" style={{borderColor: 'var(--accent)'}}>
           {items.map((item, i) => (
             <ExperienceItem
               jobTitle={item.jobTitle}
@@ -54,7 +56,8 @@ export default function Experience()
               key={i}
             />
           ))}  
-      </ol>
+        </ol>
+      </div>      
     </section>
   )
 }

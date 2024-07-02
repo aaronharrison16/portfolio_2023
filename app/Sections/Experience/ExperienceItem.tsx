@@ -9,7 +9,7 @@ export default function ExperienceItem({company, jobTitle, duration, skills, des
       <time className="mb-1 text-sm font-normal">{duration}</time>
       <h3 className="text-lg font-semibold">{jobTitle}</h3>
       <p className="text-base font-normal">{company}</p>
-      <span className="flex gap-2 py-2">
+      <span className="flex gap-2 py-2 flex-wrap">
         {skills?.map((skill, i) => (
           <Chip key={i}>
             {skill}

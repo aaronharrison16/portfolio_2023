@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export type viewType = 'hero' | 'about' | 'skills' | 'projects'
+export type viewType = 'hero' | 'about' | 'experience'
 
 export default function useSectionChanged() {
   const [activeView, setActiveView] = useState<viewType>('hero')
@@ -30,8 +30,7 @@ export default function useSectionChanged() {
     addEventListener('scroll', (s) => {
       const hero = document.getElementById('hero')?.getBoundingClientRect();
       const about = document.getElementById('about')?.getBoundingClientRect();
-      const skills = document.getElementById('skills')?.getBoundingClientRect();
-      const projects = document.getElementById('projects')?.getBoundingClientRect();
+      const experience = document.getElementById('experience')?.getBoundingClientRect();
 
       if (isInViewport(hero))
       {
@@ -41,13 +40,9 @@ export default function useSectionChanged() {
       {
         setActiveView('about')
       }
-      else if (isInViewport(skills))
+      else if (isInViewport(experience))
       {
-        setActiveView('skills')
-      }
-      else if (isInViewport(projects))
-      {
-        setActiveView('projects')
+        setActiveView('experience')
       }
     })
   }, [])
