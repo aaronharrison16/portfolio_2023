@@ -16,7 +16,7 @@ export default function RootLayout({children}: {children: React.ReactNode})
         {children}
         <Nav />
 
-        <div className='hidden md:block' style={{position: 'fixed', bottom: '32px', right: '32px'}}>
+        <div className='hidden md:block' style={{position: 'fixed', bottom: '32px', right: '32px', width: '32px'}}>
           <ContactOptions />
         </div>
       </body>
