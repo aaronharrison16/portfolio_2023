@@ -31,7 +31,7 @@ const contactItems: Array<ContactItemProps> = [
 export default function ContactOptions ()
 {
   return (
-    <div className="flex flex-row md:flex-col gap-4">
+    <div className="flex flex-row md:flex-col gap-6">
       {contactItems.map((item, i) => (
         <a className={styles.contactLink} target="_blank" key={i} href={item.href}>
           <FontAwesomeIcon icon={item.icon} />
