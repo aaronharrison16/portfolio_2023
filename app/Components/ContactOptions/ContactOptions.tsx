@@ -15,7 +15,7 @@ const contactItems: Array<ContactItemProps> = [
     icon: faEnvelope
   },
   {
-    href: 'www.linkedin.com/in/aaronharrison16',
+    href: 'https://www.linkedin.com/in/aaronharrison16',
     icon: faLinkedin
   },
   {
